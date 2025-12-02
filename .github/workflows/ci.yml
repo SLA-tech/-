@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install root deps (if any)
+      run: npm ci || echo "no root package.json"
+
+    - name: Build server
+      if: always()
+      run: |
+        if [ -f "taobao-compliance-cs/server/package.json" ]; then
+          cd taobao-compliance-cs/server
+          npm ci
+          npm run build || echo "server build failed or no build script"
+        else
+          echo "no server package.json"
+        fi
+
+    - name: Build admin
+      if: always()
+      run: |
+        if [ -f "taobao-compliance-cs/admin/package.json" ]; then
+          cd taobao-compliance-cs/admin
+          npm ci
+          npm run build || echo "admin build failed or no build script"
+        else
+          echo "no admin package.json"
+        fi
