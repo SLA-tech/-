@@ -1,0 +1,24 @@
+node_modules/
+dist/
+build/
+coverage/
+.env
+.env.*
+.DS_Store
+.idea/
+.vscode/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+logs/
+*.log
+public/assets/
+/.parcel-cache
+/.turbo
+/*.tgz
+/.cache
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini

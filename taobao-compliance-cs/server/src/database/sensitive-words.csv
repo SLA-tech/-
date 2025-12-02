@@ -1,0 +1,17 @@
+word,type,severity,enabled
+办证,legal,8,1
+公章,legal,6,1
+伪造,legal,9,1
+假章,legal,8,1
+国家机关,government,9,1
+军队,government,10,1
+公检法,government,9,1
+办证件,legal,7,1
+代办,legal,5,1
+假证件,legal,9,1
+刻章,legal,6,1
+印章,legal,5,1
+制作,legal,4,1
+证件,legal,5,1
+
+
