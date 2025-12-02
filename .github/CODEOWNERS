@@ -1,0 +1,24 @@
+# GitHub CODEOWNERS 配置
+
+# 默认所有代码的维护者
+* @SLA-tech
+
+# 后端相关
+/taobao-compliance-cs/server/ @SLA-tech
+/taobao-compliance-cs/server/src/entities/ @SLA-tech
+/taobao-compliance-cs/server/src/services/ @SLA-tech
+/taobao-compliance-cs/server/src/database/ @SLA-tech
+
+# 前端相关
+/taobao-compliance-cs/admin/ @SLA-tech
+/taobao-compliance-cs/admin/src/pages/ @SLA-tech
+/taobao-compliance-cs/admin/src/components/ @SLA-tech
+
+# 文档
+*.md @SLA-tech
+/docs/ @SLA-tech
+
+# 配置文件
+.github/ @SLA-tech
+docker* @SLA-tech
+*.json @SLA-tech
